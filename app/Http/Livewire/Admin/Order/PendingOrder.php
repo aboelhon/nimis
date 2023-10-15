@@ -17,4 +17,8 @@ class PendingOrder extends Component
             'all_items' => Item::all(),
         ]);
     }
+    public function delete_order($value)
+    {
+        Order::findorfail($value)->delete();
+    }
 }
