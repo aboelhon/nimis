@@ -1,6 +1,6 @@
 "# nimis" 
 
-
+https://youtu.be/G2GbHf4EQJI
 
 
 INSERT INTO `admins` (`id`, `name`, `username`, `email`, `password`, `birthdate`, `address`, `phone`, `photo`, `role`, `status`, `by`, `deleted_at`, `created_at`, `updated_at`) VALUES
