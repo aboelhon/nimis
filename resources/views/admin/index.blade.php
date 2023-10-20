@@ -6,4 +6,6 @@
 
 @section('livewire')
 Index Page
+ @lang('lang.id')
+
 @endsection

@@ -40,6 +40,8 @@ FB.COM/HANYMSA
 5- php artisan migrate
 
 6- comment this line before migrate then uncomment it 
+app\Providers\AppServiceProvider.php
+View::share('all_cats', Category::all());
 
 7- php artisan storage:link
 
@@ -49,4 +51,12 @@ FB.COM/HANYMSA
 Email hany@msn.com
 password 123456
 
+
+NOTES
+*** you need to know if you want to use register page you need to create smpt from you cpanel to avoid any problems or add user directly from admin panel 
+*** I did not translat the whole website i just translated some element tag without using any package
+*** The goal of that repo is to see some cruds in laravel/livewire and improve your skills 
+*** YOU ARE NOT ALLOWED TO SELL THAT REPO TO ANYONE 
+
+finally feel free to contact me anytime <3
  

@@ -85,10 +85,12 @@
                                 aria-hidden="true"></i>
                             Dashboard</a>
                     </li>
-                    <li>
-                        <a class="nav-link" href="{{ route('user.logout') }}"><i class="fa fa-sign-out"
-                                aria-hidden="true"></i> Logout</a>
-                    </li>
+                    @auth('user')
+                        <li>
+                            <a class="nav-link" href="{{ route('user.logout') }}"><i class="fa fa-sign-out"
+                                    aria-hidden="true"></i> Logout</a>
+                        </li>
+                    @endauth
                 </ul>
             </nav>
         </div>
