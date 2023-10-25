@@ -31,9 +31,9 @@
                     <th>Delete Order</th>
                 </tr>
             </thead>
-            @foreach ($all_orders as $order)
-                <tbody class="table-group-divider">
-                    <tr class="table-primary">
+            <tbody class="table-group-divider">
+                @foreach ($all_orders as $order)
+                    <tr class="table-primary" wire:key='{{ $order->id }}'>
                         <td>{{ $order->id }}</td>
                         <td>
                             @php
@@ -90,18 +90,18 @@
                             {{ $order->created_at }}
                         </td>
                         <td>
-                            <button wire:click.prevent='order_confirm({{ $order->id }})'
+                            <button type="button" wire:click.prevent='order_confirm({{ $order->id }})'
                                 class="btn btn-success">Confirm to delivered</button>
                         </td>
                         <td>
-                            <button wire:click.prevent='delete_order({{ $order->id }})'
+                            <button type="button" wire:click.prevent='delete_order({{ $order->id }})'
                                 class="btn btn-danger">Delete
                                 Order</button>
 
                         </td>
                     </tr>
-                </tbody>
-            @endforeach
+                @endforeach
+            </tbody>
         </table>
     </div>
 

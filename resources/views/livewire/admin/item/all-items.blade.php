@@ -29,9 +29,9 @@
                         <th>Delete</th>
                     </tr>
                 </thead>
-                @foreach ($all_items as $item)
-                    <tbody>
-                        <tr class="">
+                <tbody>
+                    @foreach ($all_items as $item)
+                        <tr wire:key='{{ $item->id }}'>
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->description }}</td>
@@ -61,8 +61,8 @@
                                     Delete</a>
                             </td>
                         </tr>
-                    </tbody>
-                @endforeach
+                    @endforeach
+                </tbody>
             </table>
         </div>
         <div class='container-fluid'>

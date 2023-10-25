@@ -30,9 +30,9 @@
                     <th>Delete Order</th>
                 </tr>
             </thead>
-            @foreach ($delivered_orders as $order)
-                <tbody class="table-group-divider">
-                    <tr class="table-primary">
+            <tbody class="table-group-divider">
+                @foreach ($delivered_orders as $order)
+                    <tr class="table-primary" wire:key='{{ $order->id }}'>
                         <td>{{ $order->id }}</td>
                         <td>
                             @php
@@ -83,13 +83,13 @@
                             {{ $order->updated_at }}
                         </td>
                         <td>
-                            <button wire:click.prevent='delete_order({{ $order->id }})'
+                            <button type="button" wire:click.prevent='delete_order({{ $order->id }})'
                                 class="btn btn-outline-danger">Delete
                                 Order</button>
                         </td>
                     </tr>
-                </tbody>
-            @endforeach
+                @endforeach
+            </tbody>
         </table>
     </div>
 

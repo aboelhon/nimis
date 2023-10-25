@@ -3,10 +3,11 @@
         <div class="row">
             @include('admin.flash')
             @if ($deleted_items->count() < 1)
-            <div class="text-center" > 
-                  <br><br><br>
-                  <h1 class="text-center btn btn-danger col-auto text-center">Sorry There are no deleted items found</h1>
-              </div>
+                <div class="text-center">
+                    <br><br><br>
+                    <h1 class="text-center btn btn-danger col-auto text-center">Sorry There are no deleted items found
+                    </h1>
+                </div>
             @else
                 <div class="table-responsive-md">
                     <table class="table table-dark">
@@ -20,9 +21,9 @@
                                 <th scope="col">Delete For Ever</th>
                             </tr>
                         </thead>
-                        @foreach ($deleted_items as $item)
-                            <tbody>
-                                <tr class="">
+                        <tbody>
+                            @foreach ($deleted_items as $item)
+                                <tr wire:key='{{ $item->id }}'>
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->price }}</td>
@@ -39,8 +40,8 @@
                                             class="btn btn-danger"><i class="fa fa-remove"></i> Delete</a>
                                     </td>
                                 </tr>
-                            </tbody>
-                        @endforeach
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
 

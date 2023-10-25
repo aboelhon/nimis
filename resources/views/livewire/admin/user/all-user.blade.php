@@ -31,9 +31,9 @@
                                 <th scope="col">Delete</th>
                             </tr>
                         </thead>
-                        @foreach ($allusers as $user)
-                            <tbody>
-                                <tr class="">
+                        <tbody>
+                            @foreach ($allusers as $user)
+                                <tr wire:key='{{ $user->id }}'>
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
@@ -41,8 +41,7 @@
                                     <td>{{ $user->birthdate }}</td>
                                     <td>{{ $user->address }}</td>
                                     <td>{{ $user->phone }}</td>
-                                    <td><img style="height:70px;width:70px"
-                                            src="{{ Storage::url($user->photo) }}"
+                                    <td><img style="height:70px;width:70px" src="{{ Storage::url($user->photo) }}"
                                             alt="">
                                     </td>
                                     <td>{{ $user->role }}</td>
@@ -55,8 +54,8 @@
                                             class="btn btn-danger"><i class="fa fa-remove" aria-hidden="true"></i>
                                             Delete</a></td>
                                 </tr>
-                            </tbody>
-                        @endforeach
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>

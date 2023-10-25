@@ -18,9 +18,9 @@
                         <th scope="col">Remove from cart</th>
                     </tr>
                 </thead>
-                @foreach ($user_cart as $cart)
-                    <tbody>
-                        <tr>
+                <tbody>
+                    @foreach ($user_cart as $cart)
+                        <tr wire:key='{{ $cart->id }}'>
                             <td>{{ $cart->id }}</td>
                             <td>
                                 @php
@@ -61,12 +61,12 @@
                                 </form>
                             </td>
                             <td>
-                                <button wire:click='delete_cart({{ $cart->id }})'
+                                <button type="button" wire:click='delete_cart({{ $cart->id }})'
                                     class="btn btn-danger text-center">Remove</button>
                             </td>
                         </tr>
-                    </tbody>
-                @endforeach
+                    @endforeach
+                </tbody>
             </table>
         </div>
     @endif

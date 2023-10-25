@@ -22,9 +22,9 @@
                         <th scope="col">Delete</th>
                     </tr>
                 </thead>
-                @foreach ($all_categories as $category)
-                    <tbody>
-                        <tr class="">
+                <tbody>
+                    @foreach ($all_categories as $category)
+                        <tr wire:key='{{ $category->id }}'>
                             <td>{{ $category->id }}</td>
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->description }}</td>
@@ -38,8 +38,8 @@
                                     Delete</a>
                             </td>
                         </tr>
-                    </tbody>
-                @endforeach
+                    @endforeach
+                </tbody>
             </table>
         </div>
 

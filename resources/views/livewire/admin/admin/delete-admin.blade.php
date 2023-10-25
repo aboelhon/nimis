@@ -13,9 +13,9 @@
                         <th scope="col">Delete For Ever</th>
                     </tr>
                 </thead>
-                @foreach ($alldeletedadmins as $admin)
-                    <tbody>
-                        <tr>
+                <tbody>
+                    @foreach ($alldeletedadmins as $admin)
+                        <tr wire:key='{{ $admin->id }}'>
                             <td>{{ $admin->id }}</td>
                             <td>{{ $admin->name }}</td>
                             <td>{{ $admin->username }}</td>
@@ -25,8 +25,8 @@
                             <td><a wire:click='harddelete({{ $admin->id }})' class="btn btn-danger"><i
                                         class="fa fa-remove" aria-hidden="true"></i> Delete For Ever</a></td>
                         </tr>
-                    </tbody>
-                @endforeach
+                    @endforeach
+                </tbody>
             </table>
         </div>
     @else

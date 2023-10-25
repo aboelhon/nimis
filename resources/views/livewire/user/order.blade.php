@@ -30,9 +30,9 @@
                                 <th>Date/Time</th>
                             </tr>
                         </thead>
-                        @foreach ($user_orders as $order)
-                            <tbody class="table-group-divider">
-                                <tr class="table-primary">
+                        <tbody class="table-group-divider">
+                            @foreach ($user_orders as $order)
+                                <tr class="table-primary"wire:key='{{ $order->id }}'>
                                     <td>{{ $order->id }}</td>
                                     <td>
                                         @foreach ($items->where('id', $order->item_id)->all() as $key)
@@ -56,8 +56,8 @@
                                     <td>{{ $order->status }}</td>
                                     <td>{{ $order->created_at }}</td>
                                 </tr>
-                            </tbody>
-                        @endforeach
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>

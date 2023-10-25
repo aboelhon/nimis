@@ -32,7 +32,7 @@
             </thead>
             @foreach ($pending_orders as $order)
                 <tbody class="table-group-divider">
-                    <tr class="table-primary">
+                    <tr class="table-primary" wire:key='{{ $order->id }}'>
                         <td>{{ $order->id }}</td>
                         <td>
                             @php
@@ -88,8 +88,8 @@
                                 Order</button>
                         </td>
                     </tr>
-                </tbody>
             @endforeach
+            </tbody>
         </table>
     </div>
 

@@ -17,9 +17,9 @@
                         <th scope="col">Delete For Ever</th>
                     </tr>
                 </thead>
-                @foreach ($alldeletedusers as $user)
-                    <tbody>
-                        <tr>
+                <tbody>
+                    @foreach ($alldeletedusers as $user)
+                        <tr wire:key='{{ $user->id }}'>
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->name }}</td>
                             <td><img style="height:90px;width:90px" src="{{ Storage::url($user->photo) }}"></td>
@@ -28,8 +28,8 @@
                             <td><a wire:click='harddelete({{ $user->id }})' class="btn btn-danger"><i
                                         class="fa fa-remove" aria-hidden="true"></i> Delete For Ever</a></td>
                         </tr>
-                    </tbody>
-                @endforeach
+                    @endforeach
+                </tbody>
             </table>
         </div>
     @endif

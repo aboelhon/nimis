@@ -1,12 +1,11 @@
 <div>
- 
-        <div class="col">
 
-            @include('admin.flash')
-            @include('admin.error')
-            <div class="row">
+    <div class="col">
+
+        @include('admin.flash')
+        @include('admin.error')
+        <div class="row">
             {{ $allad->links() }}
-
             <div class="table-responsive">
                 <table class="table table-secondary">
                     <thead>
@@ -27,9 +26,9 @@
                             <th scope="col">Delete</th>
                         </tr>
                     </thead>
-                    @foreach ($allad as $admin)
-                        <tbody>
-                            <tr class="">
+                    <tbody>
+                        @foreach ($allad as $admin)
+                            <tr wire:key='{{ $admin->id }}'>
                                 <td>{{ $admin->id }}</td>
                                 <td>{{ $admin->name }}</td>
                                 <td>{{ $admin->username }}</td>
@@ -55,8 +54,8 @@
                                             Delete</button></td>
                                 @endif
                             </tr>
-                        </tbody>
-                    @endforeach
+                        @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>
