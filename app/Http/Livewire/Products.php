@@ -16,7 +16,7 @@ class Products extends Component
     {
         return view('livewire.products', [
             'products' =>  Item::all(),
-            'cart_count' => Cart::where('user_id', Auth::guard('user')->user()->id)->count(),
+            'cart_count' => Cart::where('user_id', Auth::guard('user')->user()->id->count(),
         ]);
     }
 
