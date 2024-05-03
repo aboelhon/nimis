@@ -2,10 +2,8 @@
 
 https://youtu.be/G2GbHf4EQJI
 
-
 INSERT INTO `admins` (`id`, `name`, `username`, `email`, `password`, `birthdate`, `address`, `phone`, `photo`, `role`, `status`, `by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 (1, 'Hany Sabry', 'admin', 'hany@msn.com', '$2y$10$61lXEtKGFYsZNGAm0IUgT.ozCtiLNhozsv1odfQoc.M/A67ctctFy', '0000-00-00', 'Giza - Egypt', '010000000000', 'admin/admin-photo/zqM8Mx0SGKa4PyKt8dLMkI61G50YszILySBw6yzL.jpg', 'admin', 'active', 'admin', NULL, '2023-08-15 01:11:10', '2023-08-15 01:11:10');
-
 
 
 INSERT INTO `categories` (`id`, `name`, `description`, `by`, `deleted_at`, `created_at`, `updated_at`) VALUES
